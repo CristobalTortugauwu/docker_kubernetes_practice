@@ -1,0 +1,13 @@
+Primero tuvimos que crear 3 containers a partir de una imagen que no existe.
+En particular tuvimos que descargar la de nginxs.
+Para esto usamos el siguiente comando:
+        docker pull nginx   
+Luego tuvimos que crear 3 containers, y usamos el siguiente comando para crearlo:
+        docker run -d nginx
+Luego, tenemos que detener dos containers, para esto usamos el comando:
+        docker container stop <container_id>
+#Log information 
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                          PORTS     NAMES
+b4efb6632270   nginx     "/docker-entrypoint.…"   2 minutes ago   Exited (0) About a minute ago             silly_liskov
+2a27dc7a1c24   nginx     "/docker-entrypoint.…"   2 minutes ago   Exited (0) About a minute ago             exciting_babbage
+65184500b6e2   nginx     "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes                    80/tcp    sweet_payne
