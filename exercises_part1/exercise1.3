@@ -1,11 +1,17 @@
 For this exercise, we first have to run the image, it's important to run the image with the tag, otherwise it wont work, i dont know why lol.
 Anyways, the first thing to do, is to run the container, which we can do it with the following command:
+    
     docker run -d devopsdockeruh/simple-web-service:ubuntu 
+
 The flag -d is to run it in the background. It's not entirely necessary, but you wont have to open a new terminal.
 After we do that, we have to execute a command so we can start an interactive session with the container, to do so we do the following:
+    
     docker exec -it <container_id>  bash
+
 But, wait, we need the container_id, to obtain this information we can simple use 
+    
     docker container ps
+
 And after we retrieve the container_id, we will be inside the machine, and we just simple see the content of the ./text.log file,
 and we see the secret message: 
     Secret message is: 'You can find the source code here: https://github.com/docker-hy'

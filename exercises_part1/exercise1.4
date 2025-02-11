@@ -1,6 +1,7 @@
 First of all, we have to start a ubuntu image with a process. But we have to chose the flags
 carefully because, we have to run the container in a way that in can wait for an user input.
 Here is how I handle it 
+    
     docker run -it ubuntu  sh -c 'while true; do echo "Input website:"; 
     read website; echo "Searching.."; sleep 1; curl http://$website; done'
 
@@ -10,13 +11,19 @@ an input, it will say that there was an error, it says this:
 
 So, we have to install it, and we will accomplish this by opening a new terminal,
 in which we will run the following command so we can acces the container from it:
+    
     docker exec -it <container_id> bash
+
 To get the container_id you can use the command
+    
     docker container ls
+
 Once we are inside the container, you have to execute this commands in order to be able
 to install curl:
+    
     apt-get update
     apt-get-y install curl
+
 Then if we go the other terminal we can give him any website,
 and it will print the content on the terminal.
 

@@ -1,0 +1,15 @@
+first we have to run the image with the new tag, we also use the flag
+-d so we run it in the background, and we dont have to see all the strings
+that will be printed in the console. So it's not necessary to use the flag at all.
+
+    docker run -d devopsdockeruh/simple-web-service:alpine  
+
+then we have to look for the container_id with this command
+
+    docker container ls 
+
+and last but not the least, we have to connect to the running container, and
+considering that this container supports sh, because it's an alpine version,
+we have to executa sh instead of bash.  
+  
+    docker exec -it <container_id> sh

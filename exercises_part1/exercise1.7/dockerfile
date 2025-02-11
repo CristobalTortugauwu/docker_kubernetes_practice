@@ -1,13 +1,14 @@
-FROM ubuntu:22.04
-
+#we use the required image
+FROM ubuntu:22.04 
+#this command is like using a cd inside the container
 WORKDIR /usr/src/app
-
+#we run the commands to download curl
 RUN apt-get update
 
 RUN apt-get -y install curl
-
+#we transfer the file to the path where we are located
 COPY script.sh .
-
+#we change the permissions to avoid an error.
 RUN chmod +x script.sh
 
 #Please run the docker image with the -it flag
